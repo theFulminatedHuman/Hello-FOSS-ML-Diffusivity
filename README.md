@@ -15,7 +15,7 @@ Generative Adversarial Networks (GANs) are powerful neural networks used for gen
 ### Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/GAN_Scratch.git
+   git clone https://github.com/wncc/Hello-FOSS-ML-Diffusivity.git
    cd GAN_Scratch
 Install Dependencies: PyTorch installation depends on your system configuration. Refer to the official PyTorch installation guide to set it up.
 
