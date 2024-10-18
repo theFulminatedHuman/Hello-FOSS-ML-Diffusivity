@@ -7,6 +7,7 @@ import torchvision.transforms as transforms
 import torchvision.utils as vutils
 from torchvision import datasets, transforms
 import torch.nn.utils.spectral_norm as spectral_norm
+import os
 
 # Self-Attention Module Placeholder
 class SelfAttention(nn.Module):
@@ -144,11 +145,21 @@ class CIFAR10Dataset(Dataset):
         return image, label
 
 # Evaluate Function Placeholder
-def evaluate(generator, latent_dim, device):
+def evaluate(generator, latent_dim, device, output_dir="generated_images", n_images=16):
     generator.eval()
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     with torch.no_grad():
-        z = torch.randn(16, latent_dim, device=device)
+        z = torch.randn(n_images, latent_dim, device=device)
+        
         gen_imgs = generator(z)
+
+        save_path = os.path.join(output_dir, "generated_grid.png")
+        vutils.save_image(gen_imgs, save_path, normalize=True, nrow=4)
+
+    print(f"Generated images saved to {save_path}")
     generator.train()
 
 # GAN Training Loop
