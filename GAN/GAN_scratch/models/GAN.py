@@ -6,6 +6,7 @@ from torch.utils.data import DataLoader, Dataset
 import torchvision.transforms as transforms
 import torchvision.utils as vutils
 from torchvision import datasets, transforms
+import torch.nn.utils.spectral_norm as spectral_norm
 
 # Self-Attention Module Placeholder
 class SelfAttention(nn.Module):
@@ -65,21 +66,22 @@ class ResidualGenerator(nn.Module):
         return img
 
 class ResidualDiscriminator(nn.Module):
-    def _init_(self, img_channels, feature_d):
-        super(ResidualDiscriminator, self)._init_()
+    def __init__(self, img_channels, feature_d):
+        super(ResidualDiscriminator, self).__init__()
+        
         def discriminator_block(in_filters, out_filters, bn=True):
-            layers = [nn.Conv2d(in_filters, out_filters, 3, 2, 1)]
+            layers = [spectral_norm(nn.Conv2d(in_filters, out_filters, 3, 2, 1))]
             if bn:
                 layers.append(nn.BatchNorm2d(out_filters))
             layers.append(nn.LeakyReLU(0.2, inplace=True))
             return layers
 
         self.model = nn.Sequential(
-            *discriminator_block(img_channels, feature_d, bn=False),
+            *discriminator_block(img_channels, feature_d, bn=False), 
             *discriminator_block(feature_d, feature_d * 2),
             *discriminator_block(feature_d * 2, feature_d * 4),
             *discriminator_block(feature_d * 4, feature_d * 8),
-            nn.Conv2d(feature_d * 8, 1, 1, stride=1, padding=0)
+            spectral_norm(nn.Conv2d(feature_d * 8, 1, 1, stride=1, padding=0))  
         )
         
     def forward(self, img):
