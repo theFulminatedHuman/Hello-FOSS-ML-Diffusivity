@@ -1,5 +1,5 @@
 # Stable Diffusion
-Welcome to the **Stable_Diffusion_Scratch** repository! This project contains a Diffusion Model built from scratch, designed to provide a hands-on learning experience in diffusion model fundamentals. The repository is structured to enable contributors to build, train, and experiment with custom diffusion model implementations, and enhance them with various functionalities.
+Welcome to the **StableDiffusion** directory! This project contains a Diffusion Model built from scratch, designed to provide a hands-on learning experience in diffusion model fundamentals. The repository is structured to enable contributors to build, train, and experiment with custom diffusion model implementations, and enhance them with various functionalities.
 
 ## Introduction
 
