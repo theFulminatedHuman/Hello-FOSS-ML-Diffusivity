@@ -1,6 +1,6 @@
-# GAN_Scratch
+# GAN
 
-Welcome to the **GAN_Scratch** repository! This project contains a GAN (Generative Adversarial Network) model built from scratch, designed to provide a hands-on learning experience in GAN fundamentals. The repository is structured to enable contributors to build, train, and experiment with custom GAN implementations and enhance them with various functionalities.
+Welcome to the **GAN** directory! This project contains a GAN (Generative Adversarial Network) model built from scratch, designed to provide a hands-on learning experience in GAN fundamentals. The repository is structured to enable contributors to build, train, and experiment with custom GAN implementations and enhance them with various functionalities.
 
 ## Introduction
 Generative Adversarial Networks (GANs) are powerful neural networks used for generating synthetic data that resembles real-world data. This project is focused on image generation and includes a series of issues for contributors to solve, guiding them through essential GAN concepts, optimizations, and practical implementations. By following the issues, you’ll learn how to optimize, extend, and evaluate GAN models step-by-step.
