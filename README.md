@@ -16,4 +16,4 @@ This repository is an open space for collaboration, learning, and building state
 
 We warmly welcome contributions from everyone! Whether you are fixing bugs, adding features, or improving documentation, your efforts are greatly appreciated.
 
-To get started, please read our [Contributing](contributing.md) guide. It contains all the information you need to know about how to contribute to the project, from setting up your environment to submitting pull requests.
+To get started, please read our [Contributing](Contributing.md) guide. It contains all the information you need to know about how to contribute to the project, from setting up your environment to submitting pull requests.
